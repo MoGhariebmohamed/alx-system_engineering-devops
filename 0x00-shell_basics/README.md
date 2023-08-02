@@ -1,2 +1,2 @@
 #!/bin/bash
-pwd for current  directory 
+pwd for current  directory ls for listing current directory 
