@@ -1,2 +1,2 @@
 #!/bin/bash
-pwd-for current directory ls-for listing current directory  cd-to change directory to home ls -l for long listing li -na show hidden files ll to show long format mkdir -p to creat director in anthor path
+pwd-for current directory ls-for listing current directory  cd-to change directory to home ls -l for long listing li -na show hidden files ll to show long format mkdir -p to creat director in anthor path  mv file path new direct
