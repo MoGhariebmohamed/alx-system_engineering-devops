@@ -1,2 +1,2 @@
 #!/bin/bash
-su  for change the user whoami to show current user whoami to show current user     groups to sho all groups chown newoner file to change the owner
+su  for change the user whoami to show current user whoami to show current user     groups to sho all groups chown newoner file to change the owner touch to creat empt file
