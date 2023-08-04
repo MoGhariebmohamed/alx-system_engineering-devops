@@ -1,2 +1,2 @@
 #!/bin/bash
-u -1 for change the user
+su  for change the user whoami to show current user
