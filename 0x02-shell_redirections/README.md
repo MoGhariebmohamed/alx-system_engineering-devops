@@ -1,2 +1,2 @@
 #!/bin/bash
-cat word to make file write this word
+echo" word" to make file write this word echo "(Ôo)" for smile
