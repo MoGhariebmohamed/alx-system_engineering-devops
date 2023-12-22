@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # a Bash script that displays Best School 10 times usin until
 i=0;
-while [ $i -lt 10 ]; do
+while [ $i -lt 9 ]; do
 	if [ $i -eq 3 ]
 	then	
 		echo "bad luck"
@@ -11,5 +11,4 @@ while [ $i -lt 10 ]; do
 	fi
 	echo "Best School"
 	(( i++ ))
-	
 done
