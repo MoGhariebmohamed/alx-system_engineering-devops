@@ -2,6 +2,6 @@
 #Bash script displays The content of the current directory after -.
 list=$(ls);
 for x in $list; do
-	echo "$x" | cut -d "-" -f2
+	echo "$x" | cut -d "-" -f3
 
 done
