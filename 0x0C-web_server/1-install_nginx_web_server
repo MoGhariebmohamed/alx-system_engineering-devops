@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#Web servers are the piece of software generating and serving HTML pages, let’s install one!
+echo -e "Updating or installing Nginx.\n"
+sudo apt-get update -y -qq && \
+	 sudo apt-get install nginx -y
+
+echo -e "\nSetting up some minor stuff.\n"
+#start nginex
+sudo service nginx start
+#for firewall 
+sudo ufw allow 'Nginx HTTP'
+#change the owner
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+#default index
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
+
+# Creating new index
+echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
+
+# Restarting nginx
+sudo service nginx restart
+echo -e "\nCompleted. ✅\n"
