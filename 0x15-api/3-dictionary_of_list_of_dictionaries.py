@@ -4,30 +4,31 @@ The script must display on the standard output the employee TODO list
 """
 
 
+import csv
+import json
 import re
 import requests
 import sys
 
 
-API_URL = "https://jsonplaceholder.typicode.com"
-
-
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        if re.fullmatch(r'\d+', sys.argv[1]):
-            employ_ID = int(sys.argv[1])
-            url_request = requests.get('{}/users/{}'
-                                       .format(API_URL, employ_ID)).json()
-            url_tasks = requests.get('{}/todos'.format(API_URL)).json()
-            emp_name = url_request.get('name')
-            emp_tasks = list(filter(lambda x: x.get('userId') == employ_ID,
-                                    url_tasks)
-                             )
-            emp_complt_tsk = list(filter(lambda x: x.
-                                         get('completed'), emp_tasks))
-            print('Employee {} is done with tasks({}/{}):'
-                  .format(emp_name, len(emp_complt_tsk), len(emp_tasks)))
+    API_URL = "https://jsonplaceholder.typicode.com"
+    url_request = requests.get('{}/users'
+                               .format(API_URL)).json()
 
-            if len(emp_complt_tsk) > 0:
-                for tasks in emp_complt_tsk:
-                    print('\t {}'.format(tasks.get('title')))
+    employs_dict = {}
+    for employe in url_request:
+        employ_ID = employe.get('id')
+        employ_name = employe.get('username')
+        employ_url = requests.get('{}/users/{}/todos'.format(API_URL,
+                                                             employ_ID))
+        tasks_json = employ_url.json()
+        employs_dict[employ_ID] = []
+        for task in tasks_json:
+            done = task.get('completed')
+            done_title = task.get('title')
+            employs_dict[employ_ID].append({"task": done_title,
+                                               "completed": done,
+                                               "username": employ_name})
+    with open('todo_all_employees.json', 'w') as jsonfile:
+        json.dump(employs_dict, jsonfile)
