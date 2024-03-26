@@ -21,12 +21,12 @@ if __name__ == '__main__':
     tasks_stat = requests.get('{}/users/{}/todos'
                               .format(API_URL, employ_ID)).json()
 
-    dictionary_data = {employ_ID : []}
+    dictionary_data = {employ_ID: []}
     for task in tasks_stat:
-            done = task.get('completed')
-            done_title = task.get('title')
-            dictionary_data[employ_ID].append({"task" : done_title,
-                                               "completed" : done,
-                                               "username" : usr_name})
+        done = task.get('completed')
+        done_title = task.get('title')
+        dictionary_data[employ_ID].append({"task": done_title,
+                                           "completed": done,
+                                           "username": usr_name})
     with open('{}.json'.format(employ_ID), 'w') as jsonfile:
         json.dump(dictionary_data, jsonfile)
