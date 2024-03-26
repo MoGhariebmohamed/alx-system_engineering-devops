@@ -28,7 +28,7 @@ if __name__ == '__main__':
             done = task.get('completed')
             done_title = task.get('title')
             employs_dict[employ_ID].append({"task": done_title,
-                                               "completed": done,
-                                               "username": employ_name})
+                                            "completed": done,
+                                            "username": employ_name})
     with open('todo_all_employees.json', 'w') as jsonfile:
         json.dump(employs_dict, jsonfile)
