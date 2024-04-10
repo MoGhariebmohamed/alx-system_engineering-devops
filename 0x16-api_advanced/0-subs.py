@@ -14,3 +14,7 @@ def number_of_subscribers(subreddit):
     if request_data.status_code != 200:
         return 0
     return request_data.json().get("data").get("subscribers")
+
+
+if __name__ == "__main__":
+    number_of_subscribers(argv[1])
