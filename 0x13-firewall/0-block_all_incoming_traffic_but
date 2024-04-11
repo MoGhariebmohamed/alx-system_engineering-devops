@@ -1,7 +1,12 @@
+#reset the values
+sudo ufw reset
+#deny all default and allow not affect the server 
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-
+#to disable the ufw to make sure the settin reseted and start adding
+sudo systemctrl stop ufw
 sudo ufw allow ssh
+#allow know to check
 sudo ufw enable
 sudo ufw allow https
 sudo ufw allow http
