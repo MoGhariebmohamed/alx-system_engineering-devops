@@ -1,12 +1,30 @@
 #!/bin/bash
-0x16. API advanced
-Background Context
-Questions involving APIs are common for interviews. Sometimes they’re as simple as ‘write a Python script that queries a given endpoint’, sometimes they require you to use recursive functions and format/sort the results.
+0x18. Webstack monitoring
+DevOps
+SysAdmin
+monitoring
 
-A great API to use for some practice is the Reddit API. There’s a lot of endpoints available, many that don’t require any form of authentication, and there’s tons of information to be parsed out and presented. Getting comfortable with API calls now can save you some face during technical interviews and even outside of the job market, you might find personal use cases to make your life a little bit easier.
+Background Context
+“You cannot fix or improve what you cannot measure” is a famous saying in the Tech industry. In the age of the data-ism, monitoring how our Software systems are doing is an important thing. In this project, we will implement one of many tools to measure what is going on our servers.
+
+Web stack monitoring can be broken down into 2 categories:
+
+Application monitoring: getting data about your running software and making sure it is behaving as expected
+Server monitoring: getting data about your virtual or physical server and making sure they are not overloaded (could be CPU, memory, disk or network overload)
+
 
 Resources
 Read or watch:
 
-Reddit API Documentation
-Query String
+What is server monitoring
+What is application monitoring
+System monitoring by Google
+Nginx logging and monitoring
+Learning Objectives
+At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+
+General
+Why is monitoring needed
+What are the 2 main area of monitoring
+What are access logs for a web server (such as Nginx)
+What are error logs for a web server (such as Nginx)
